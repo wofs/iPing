@@ -1,0 +1,6 @@
+127.0.0.1 localhost
+050505.ru
+yandex.ru Yandex
+google.ru GOOGLE
+192.168.0.1  test
+192.168.1.12 test IP Address

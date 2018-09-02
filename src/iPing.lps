@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Release"/>
+    <Units Count="10">
+      <Unit0>
+        <Filename Value="iPing.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="30"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="fmmainu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FmMainU"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="322"/>
+        <CursorPos X="14" Y="348"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="utilsu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UtilsU"/>
+        <EditorIndex Value="1"/>
+        <CursorPos Y="10"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="3649"/>
+        <CursorPos X="47" Y="3680"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\grid_semaphor\semaphorgrids.pas"/>
+        <UnitName Value="SemaphorGrids"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="49"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\fpc\3.0.4\source\rtl\objpas\fgl.pp"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="91"/>
+        <CursorPos X="11" Y="114"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\synapse\code\pingsend.pas"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wcthread.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="554"/>
+        <CursorPos Y="585"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\synapse\code\blcksock.pas"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="1467"/>
+        <CursorPos X="14" Y="1490"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit9>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="381" Column="43" TopLine="364"/>
+      </Position1>
+      <Position2>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="201" Column="22" TopLine="195"/>
+      </Position2>
+      <Position3>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1291" Column="14" TopLine="1270"/>
+      </Position3>
+      <Position4>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="201" Column="21" TopLine="178"/>
+      </Position4>
+      <Position5>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1292" Column="14" TopLine="1271"/>
+      </Position5>
+      <Position6>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1738" Column="14" TopLine="1715"/>
+      </Position6>
+      <Position7>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1149" Column="71" TopLine="1140"/>
+      </Position7>
+      <Position8>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="5394" Column="6" TopLine="5370"/>
+      </Position8>
+      <Position9>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="3634" Column="43" TopLine="3623"/>
+      </Position9>
+      <Position10>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="5395" Column="3" TopLine="5372"/>
+      </Position10>
+      <Position11>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="5394" Column="6" TopLine="5372"/>
+      </Position11>
+      <Position12>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1162" Column="45" TopLine="1141"/>
+      </Position12>
+      <Position13>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="791" Column="5" TopLine="769"/>
+      </Position13>
+      <Position14>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="3668" Column="36" TopLine="3644"/>
+      </Position14>
+      <Position15>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1132" Column="17" TopLine="1111"/>
+      </Position15>
+      <Position16>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="3106" Column="30" TopLine="3093"/>
+      </Position16>
+      <Position17>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="3680" Column="9" TopLine="3640"/>
+      </Position17>
+      <Position18>
+        <Filename Value="utilsu.pas"/>
+        <Caret Line="11" Column="25"/>
+      </Position18>
+      <Position19>
+        <Filename Value="utilsu.pas"/>
+        <Caret Line="18" Column="50"/>
+      </Position19>
+      <Position20>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <Caret Line="1132" Column="54" TopLine="1111"/>
+      </Position20>
+      <Position21>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="189" Column="25" TopLine="179"/>
+      </Position21>
+      <Position22>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="108" TopLine="70"/>
+      </Position22>
+      <Position23>
+        <Filename Value="utilsu.pas"/>
+        <Caret Line="44"/>
+      </Position23>
+      <Position24>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="91" TopLine="75"/>
+      </Position24>
+      <Position25>
+        <Filename Value="utilsu.pas"/>
+        <Caret Line="44" TopLine="3"/>
+      </Position25>
+      <Position26>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="196" TopLine="184"/>
+      </Position26>
+      <Position27>
+        <Filename Value="utilsu.pas"/>
+        <Caret Line="10"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="323" Column="31" TopLine="314"/>
+      </Position28>
+      <Position29>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="391" Column="82" TopLine="371"/>
+      </Position29>
+      <Position30>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="71" Column="14" TopLine="49"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
