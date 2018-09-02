@@ -384,7 +384,6 @@ object FmMain: TFmMain
     }
   end
   object Threads: TWCThread
-    AutoStart = False
     left = 392
     top = 152
     object TaskLoadFromFile: TTask

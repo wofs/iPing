@@ -19,7 +19,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="4"/>
+      <BuildNr Value="5"/>
       <StringTable Comments="Utility to ping a list of hosts" CompanyName="Home" LegalCopyright="wofs (c) 2018" ProductName="iPing" ProductVersion="0.0.1.x"/>
     </VersionInfo>
     <BuildModes Count="3">

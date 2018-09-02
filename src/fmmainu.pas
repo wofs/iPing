@@ -68,6 +68,8 @@ type
     fHosts: THosts;
     fFileName: string;
     procedure BtnChangeStatus;
+    procedure CheckFileName(aFileName: string);
+    procedure CommandLineGetFileName;
     function GetStatistics: string;
     procedure GridLogFill;
     procedure GridLogSetStatus(aIndex: integer; aStatus: Integer; const aMS: integer
@@ -172,13 +174,11 @@ begin
      Threads.Task[0].Start(fFileName);
 end;
 
-procedure TFmMain.FormDropFiles(Sender: TObject; const FileNames: array of String);
+procedure TFmMain.CheckFileName(aFileName:string);
 var
   aFileExt: string;
 begin
-  if Threads.Task[0].IsRunning or Threads.Task[1].IsRunning then exit;
-
-  fFileName:= FileNames[0];
+  fFileName:= aFileName;
   aFileExt:= LowerCase(ExtractFileExt(fFileName));
 
   case aFileExt of
@@ -190,7 +190,13 @@ begin
     else
       ShowMessage('The file must have an extension .txt!');
   end;
+end;
 
+procedure TFmMain.FormDropFiles(Sender: TObject; const FileNames: array of String);
+begin
+  if Threads.Task[0].IsRunning or Threads.Task[1].IsRunning then exit;
+
+  CheckFileName(FileNames[0]);
 end;
 
 procedure TFmMain.BtnClearClick(Sender: TObject);
@@ -257,16 +263,26 @@ begin
   end;
 end;
 
+procedure TFmMain.CommandLineGetFileName;
+begin
+if (Length(ParamStrUTF8(1))>0) and FileExists(ParamStrUTF8(1)) then
+   CheckFileName(ParamStrUTF8(1));
+end;
+
 procedure TFmMain.FormCreate(Sender: TObject);
 begin
   FmMain.Caption:='iPing - '+GetVersion;
+  CommandLineGetFileName;
 end;
 
 procedure TFmMain.DrawImage(Sender: TObject; aRect: TRect; aIndex:integer);
 begin
-  TStringGrid(Sender).Canvas.FillRect(aRect);
-  TStringGrid(Sender).Canvas.TextOut(aRect.Right - 2 - TStringGrid(Sender).Canvas.TextWidth(' '), aRect.Top + 2, ' ');
-  TStringGrid(Sender).TitleImageList.Draw(TStringGrid(Sender).Canvas,aRect.Left,aRect.Top+2,aIndex)
+  with TStringGrid(Sender) do
+  begin
+    Canvas.FillRect(aRect);
+    Canvas.TextOut(aRect.Right - 2 - Canvas.TextWidth(' '), aRect.Top + 2, ' ');
+    TitleImageList.Draw(Canvas,aRect.Left,aRect.Top+2,aIndex)
+  end;
 end;
 
 procedure TFmMain.GridLogDrawCell(Sender: TObject; aCol, aRow: Integer;
@@ -276,13 +292,11 @@ var
 begin
   aCellText:= TStringGrid(Sender).Cells[aCol, aRow];
 
-
   case aCellText of
     '0': DrawImage(Sender,aRect, 0);//red
-    '1': DrawImage(Sender,aRect, 1);//blue
+    '1': DrawImage(Sender,aRect, 1);//arrow
     '2': DrawImage(Sender,aRect, 2);//green
   end;
-
 end;
 
 procedure TFmMain.TaskLoadFromFileExecute(const Sender: TTask; const Msg: Word;
@@ -354,7 +368,6 @@ begin
 
   if aPingSend.Ping(fHosts[aIndex].Host) then
     Result:= aPingSend.PingTime;
-
 end;
 
 procedure TFmMain.TaskPingExecute(const Sender: TTask; const Msg: Word;
