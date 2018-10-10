@@ -9,9 +9,9 @@ unit FmMainU;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  Grids, ComCtrls, StdCtrls, wcthread, LazUTF8, Types, math, lclintf, UtilsU,
-  pingsend;
+  Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, Buttons,
+  Grids, ComCtrls, wcthread, LazUTF8, Types, lclintf, UtilsU,
+  wPingU;
 
 type
 
@@ -48,6 +48,7 @@ type
     procedure BtnRetryClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure FormDropFiles(Sender: TObject; const FileNames: array of String);
     procedure GridLogDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
@@ -64,21 +65,14 @@ type
     procedure TaskPingMessage(const Sender: TTask; const Msg: Word;
       const Param: Variant);
   private
-    fHostsFile: TStringList;
-    fHosts: THosts;
-    fFileName: string;
+    wPing: TwPing;
     procedure BtnChangeStatus;
     procedure CheckFileName(aFileName: string);
     procedure CommandLineGetFileName;
-    function GetStatistics: string;
     procedure GridLogFill;
     procedure GridLogSetStatus(aIndex: integer; aStatus: Integer; const aMS: integer
       =-1);
-    procedure HostAdd(aRow: integer; aString: String);
     procedure DrawImage(Sender: TObject; aRect: TRect; aIndex: integer);
-    function GetHostsFromFile(const Sender: TTask; aFileName: string): boolean;
-    function ParseString(aTextLine: string): THost;
-    function Ping(var aPingSend: TPINGSend; aIndex: integer): integer;
     procedure RunPing;
   public
 
@@ -93,34 +87,6 @@ implementation
 
 { TFmMain }
 
-function TFmMain.ParseString(aTextLine: string): THost;
-var
-  aSpacePosition: PtrInt;
-  aText: string;
-begin
-  aText:='';
-  aText:= Trim(aTextLine);
-  aSpacePosition:= UTF8Pos(#32,aText);
-  if aSpacePosition>0 then
-  begin
-    Result.Host:=Trim(UTF8Copy(aText,1,aSpacePosition));
-    Result.Description:=Trim(UTF8Copy(aText,aSpacePosition, UTF8Length(aText)));
-  end else
-  begin
-    Result.Host:=Trim(aText);
-    Result.Description:='';
-  end;
-
-end;
-
-procedure TFmMain.HostAdd(aRow:integer; aString:String);
-var
-  aIpRecord: THost;
-begin
-  aIpRecord:= ParseString(aString);
-  fHosts[aRow].Host:= aIpRecord.Host;
-  fHosts[aRow].Description:= aIpRecord.Description;;
-end;
 
 procedure TFmMain.GridLogFill;
 var
@@ -129,57 +95,30 @@ begin
   GridLog.BeginUpdate;
 
   GridLog.RowCount:=0;
-  GridLog.RowCount:=Length(fHosts)+1;
+  GridLog.RowCount:=wPing.HostsCount+1;
 
-  for i:=0 to High(fHosts) do
+  for i:=0 to wPing.HostsCount-1 do
     begin
-      GridLog.Cells[1,i+1]:= fHosts[i].Host;
-      GridLog.Cells[2,i+1]:= fHosts[i].Description;
+      GridLog.Cells[1,i+1]:= wPing.Hosts[i].Host;
+      GridLog.Cells[2,i+1]:= wPing.Hosts[i].Description;
     end;
 
   GridLog.EndUpdate();
 end;
 
-function TFmMain.GetHostsFromFile(const Sender: TTask; aFileName: string
-  ): boolean;
-var
-  i: Integer;
-begin
-  Result:= false;
-  try
-    fHostsFile:= TStringList.Create;
-    fHostsFile.Clear;
-    fHostsFile.LoadFromFile(aFileName);
-
-    SetLength(fHosts,fHostsFile.Count);
-    Sender.PostProgress(0,fHostsFile.Count);
-    Sender.PostProgress(1,0);
-
-    for i:=0 to fHostsFile.Count-1 do
-      begin
-        HostAdd(i, fHostsFile.Strings[i]);
-        Sender.PostProgress(2,0);
-      end;
-
-    Result:= true;
-  finally
-    FreeAndNil(fHostsFile);
-  end;
-
-end;
 
 procedure TFmMain.RunPing;
 begin
-  if FileExists(fFileName) then
-     Threads.Task[0].Start(fFileName);
+  if FileExists(wPing.FileName) then
+     Threads.Task[0].Start(wPing.FileName);
 end;
 
 procedure TFmMain.CheckFileName(aFileName:string);
 var
   aFileExt: string;
 begin
-  fFileName:= aFileName;
-  aFileExt:= LowerCase(ExtractFileExt(fFileName));
+  wPing.FileName:= aFileName;
+  aFileExt:= LowerCase(ExtractFileExt(wPing.FileName));
 
   case aFileExt of
     '.txt':
@@ -203,7 +142,7 @@ procedure TFmMain.BtnClearClick(Sender: TObject);
 begin
   if MessageDlg('To clear the list of hosts?', mtWarning, mbOKCancel, 0) = mrCancel then exit;
 
-  fHosts:= nil;
+  wPing.HostsClear;
   GridLog.RowCount:=1;
   ProgressBar.Position:=0;
 end;
@@ -218,7 +157,6 @@ begin
 
     BtnChangeStatus;
     StatusBar.SimpleText:='Operation aborted by user!';
-
   end;
 end;
 
@@ -230,37 +168,9 @@ begin
 end;
 
 procedure TFmMain.BtnSaveClick(Sender: TObject);
-var
-  aFileNameSave, aResult, aResponse: String;
-  i, aMS: Integer;
 begin
-  if GridLog.RowCount = 1 then exit;
-
   if SaveDialog.Execute then
-  begin
-    aFileNameSave:= SaveDialog.FileName;
-    fHostsFile:= TStringList.Create;
-
-    try
-      for i:=0 to High(fHosts) do
-        begin
-          if fHosts[i].Result then aResult:= 'YES' else aResult:= 'NO';
-          aMS:= fHosts[i].Time;
-
-          if aMS>-1 then
-            aResponse:= IntToStr(aMS)+' ms'
-          else
-            aResponse:= '<no response>';
-
-          fHostsFile.Append(aResult+'|'+fHosts[i].Host+'|'+fHosts[i].Description+'|'+aResponse);
-        end;
-      fHostsFile.SaveToFile(aFileNameSave);
-    finally
-      FreeAndNil(fHostsFile);
-    end;
-
-    if MessageDlg('To open a saved file?', mtConfirmation, mbOKCancel, 0) = mrOK then OpenDocument(aFileNameSave);
-  end;
+    wPing.SaveToFile(SaveDialog.FileName);
 end;
 
 procedure TFmMain.CommandLineGetFileName;
@@ -272,7 +182,14 @@ end;
 procedure TFmMain.FormCreate(Sender: TObject);
 begin
   FmMain.Caption:='iPing - '+GetVersion;
+  wPing:= TwPing.Create;
+
   CommandLineGetFileName;
+end;
+
+procedure TFmMain.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(wPing);
 end;
 
 procedure TFmMain.DrawImage(Sender: TObject; aRect: TRect; aIndex:integer);
@@ -302,7 +219,7 @@ end;
 procedure TFmMain.TaskLoadFromFileExecute(const Sender: TTask; const Msg: Word;
   var Param: Variant);
 begin
-  Param:= GetHostsFromFile(Sender, Param);
+  Param:= wPing.GetHostsFromFile(Sender, Param);
 end;
 
 procedure TFmMain.TaskLoadFromFileFinish(const Sender: TTask; const Msg: Word;
@@ -334,74 +251,29 @@ begin
   end;
 end;
 
-function TFmMain.GetStatistics:string;
-var
-  aOK, aFAIL, i: Integer;
-  aAVG: double;
-begin
-  Result:= '';
-  aOK:= 0;
-  aFAIL:= 0;
-  aAVG:= 0.0;
-  if not Assigned(fHosts) then exit;
-
-  for i:=0 to High(fHosts) do
-    begin
-      if fHosts[i].Result then
-      begin
-        Inc(aOK);
-        aAVG:= aAVG+fHosts[i].Time;
-      end
-      else
-        Inc(aFAIL);
-    end;
-
-  if aOK>0 then
-    aAVG:= RoundTo(aAVG/aOK,-1);
-
-  Result:= '| OK:'+IntToStr(aOK)+' | FAIL:'+IntToStr(aFAIL)+' | Average response time:'+FloatToStr(aAVG)+' ms |';
-end;
-
-function TFmMain.Ping(var aPingSend: TPINGSend; aIndex: integer):integer;
-begin
-  Result:= -1;
-
-  if aPingSend.Ping(fHosts[aIndex].Host) then
-    Result:= aPingSend.PingTime;
-end;
 
 procedure TFmMain.TaskPingExecute(const Sender: TTask; const Msg: Word;
   var Param: Variant);
 var
-  aPingSend: TPINGSend;
   i, aResult: Integer;
 begin
-  aPingSend := TPINGSend.Create;
+   Sender.PostProgress(0,wPing.HostsCount);
+   Sender.PostProgress(1,0);
 
-  try
-     aPingSend.Timeout := 1500;
-
-     Sender.PostProgress(0,Length(fHosts));
-     Sender.PostProgress(1,0);
-
-     for i:=0 to High(fHosts) do
-       begin
-         Sender.PostMessage(i,-2); // set status
-         aResult:= Ping(aPingSend,i);
-         Sender.PostProgress(2,0);
-         Sender.PostMessage(i,aResult); // set status
-       end;
-
-    finally
-      aPingSend.Free;
-    end;
+   for i:=0 to wPing.HostsCount-1 do
+     begin
+       Sender.PostMessage(i,-2); // set status
+       aResult:= wPing.Ping(i);
+       Sender.PostProgress(2,0);
+       Sender.PostMessage(i,aResult); // set status
+     end;
 end;
 
 procedure TFmMain.TaskPingFinish(const Sender: TTask; const Msg: Word;
   const Param: Variant);
 begin
   BtnChangeStatus;
-  StatusBar.SimpleText:='All operations is completed. Statistics: '+GetStatistics;
+  StatusBar.SimpleText:='All operations is completed. Statistics: '+wPing.GetStatistics;
   ShowMessage('All operations is completed!');
 end;
 
@@ -414,8 +286,8 @@ begin
   if aMS>-1 then
   begin
     GridLog.Cells[3,aIndex+1]:= IntToStr(aMS)+' ms';
-    fHosts[aIndex].Time:= aMS;
-    fHosts[aIndex].Result:= true;
+    wPing.Hosts[aIndex].Time:= aMS;
+    wPing.Hosts[aIndex].Result:= true;
   end
   else
   begin
@@ -423,8 +295,8 @@ begin
       GridLog.Cells[3,aIndex+1]:= 'ping...'
     else
       GridLog.Cells[3,aIndex+1]:= '<no response>';
-    fHosts[aIndex].Time:= -1;
-    fHosts[aIndex].Result:= false;
+    wPing.Hosts[aIndex].Time:= -1;
+    wPing.Hosts[aIndex].Result:= false;
   end;
 
   GridLog.EndUpdate();

@@ -1,7 +1,7 @@
 object FmMain: TFmMain
-  Left = 425
+  Left = 539
   Height = 437
-  Top = 127
+  Top = 267
   Width = 765
   AllowDropFiles = True
   Caption = 'iPing'
@@ -47,6 +47,7 @@ object FmMain: TFmMain
     0000
   }
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnDropFiles = FormDropFiles
   Position = poScreenCenter
   SessionProperties = 'Width;Height;WindowState'

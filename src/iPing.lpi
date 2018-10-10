@@ -19,7 +19,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="6"/>
       <StringTable Comments="Utility to ping a list of hosts" CompanyName="Home" LegalCopyright="wofs (c) 2018" ProductName="iPing" ProductVersion="0.0.1.x"/>
     </VersionInfo>
     <BuildModes Count="3">
@@ -116,7 +116,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="iPing.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -134,6 +134,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="UtilsU"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="wpingu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="wPingU"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

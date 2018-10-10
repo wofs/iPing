@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Release"/>
-    <Units Count="11">
+    <Units Count="14">
       <Unit0>
         <Filename Value="iPing.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
       </Unit0>
       <Unit1>
         <Filename Value="fmmainu.pas"/>
@@ -21,11 +21,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FmMainU"/>
-        <TopLine Value="171"/>
-        <CursorPos X="45" Y="192"/>
-        <UsageCount Value="30"/>
+        <IsVisibleTab Value="True"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="38" Y="16"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <TopLine Value="89"/>
+          <CursorPos X="6" Y="131"/>
+        </ExtraEditor1>
+        <UsageCount Value="31"/>
         <Bookmarks Count="1">
-          <Item0 X="4" Y="269" ID="9"/>
+          <Item0 X="4" Y="179" ID="9"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,195 +40,213 @@
         <Filename Value="utilsu.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UtilsU"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <CursorPos Y="10"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="23"/>
       </Unit2>
       <Unit3>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
-        <UnitName Value="Grids"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="3649"/>
-        <CursorPos X="47" Y="3680"/>
-        <UsageCount Value="14"/>
+        <Filename Value="wpingu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="wPingU"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="28" Y="12"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\grid_semaphor\semaphorgrids.pas"/>
-        <UnitName Value="SemaphorGrids"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="49"/>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3649"/>
+        <CursorPos X="47" Y="3680"/>
         <UsageCount Value="14"/>
-        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\grid_semaphor\semaphorgrids.pas"/>
+        <UnitName Value="SemaphorGrids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <UsageCount Value="14"/>
+      </Unit5>
+      <Unit6>
         <Filename Value="D:\Soft\Lazarus_1.8.2_x64\fpc\3.0.4\source\rtl\objpas\fgl.pp"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="91"/>
         <CursorPos X="11" Y="114"/>
         <UsageCount Value="13"/>
-        <Loaded Value="True"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\synapse\code\pingsend.pas"/>
-        <EditorIndex Value="6"/>
-        <UsageCount Value="13"/>
-        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\synapse\code\pingsend.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="13"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wcthread.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="631"/>
         <CursorPos Y="654"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
-      </Unit7>
-      <Unit8>
+      </Unit8>
+      <Unit9>
         <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\synapse\code\blcksock.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1467"/>
         <CursorPos X="14" Y="1490"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\lclintf.pas"/>
-        <UnitName Value="LCLIntf"/>
-        <EditorIndex Value="3"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit10>
+      <Unit11>
         <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wthread.pas"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="645"/>
         <CursorPos Y="667"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
-      </Unit10>
+      </Unit11>
+      <Unit12>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="27"/>
+        <CursorPos X="84" Y="43"/>
+        <UsageCount Value="10"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="73" Y="59"/>
+        <UsageCount Value="10"/>
+      </Unit13>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="274" Column="41" TopLine="252"/>
+        <Caret Line="316" Column="57" TopLine="305"/>
       </Position1>
       <Position2>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="71" Column="15" TopLine="49"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="58" Column="16" TopLine="49"/>
       </Position2>
       <Position3>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="187" TopLine="177"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="40" Column="5" TopLine="21"/>
       </Position3>
       <Position4>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="221" Column="21" TopLine="211"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="183" Column="30" TopLine="140"/>
       </Position4>
       <Position5>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="233" Column="5" TopLine="229"/>
+        <Caret Line="178" Column="3" TopLine="165"/>
       </Position5>
       <Position6>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="82" Column="15" TopLine="60"/>
+        <Caret Line="45" Column="32" TopLine="22"/>
       </Position6>
       <Position7>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="173" TopLine="171"/>
+        <Caret Line="176" TopLine="148"/>
       </Position7>
       <Position8>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="229" Column="5" TopLine="211"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="163" Column="19" TopLine="140"/>
       </Position8>
       <Position9>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="82" Column="15" TopLine="60"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="173" Column="58" TopLine="142"/>
       </Position9>
       <Position10>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="174" TopLine="166"/>
+        <Caret Line="166" Column="69" TopLine="148"/>
       </Position10>
       <Position11>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wcthread.pas"/>
-        <Caret Line="654" TopLine="631"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="170" Column="22" TopLine="148"/>
       </Position11>
       <Position12>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="174" TopLine="166"/>
+        <Caret Line="175" Column="75" TopLine="148"/>
       </Position12>
       <Position13>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="217" Column="9" TopLine="211"/>
+        <Caret Line="179" Column="113" TopLine="163"/>
       </Position13>
       <Position14>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="267" Column="37" TopLine="246"/>
+        <Caret Line="177" Column="46" TopLine="163"/>
       </Position14>
       <Position15>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="174" Column="22" TopLine="148"/>
+        <Caret Line="181" Column="33" TopLine="163"/>
       </Position15>
       <Position16>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="217" Column="27" TopLine="211"/>
+        <Caret Line="23" Column="69"/>
       </Position16>
       <Position17>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wcthread.pas"/>
-        <Caret Line="138" Column="31" TopLine="116"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="176" Column="39" TopLine="148"/>
       </Position17>
       <Position18>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="217" Column="24" TopLine="211"/>
+        <Caret Line="246" Column="75" TopLine="219"/>
       </Position18>
       <Position19>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="220" Column="22" TopLine="211"/>
+        <Caret Line="136" Column="38" TopLine="118"/>
       </Position19>
       <Position20>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="308" TopLine="283"/>
+        <Caret Line="110" TopLine="227"/>
       </Position20>
       <Position21>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="394" Column="10" TopLine="369"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="38" Column="25" TopLine="16"/>
       </Position21>
       <Position22>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="393" TopLine="369"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="151" Column="17" TopLine="140"/>
       </Position22>
       <Position23>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="218" TopLine="211"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="66" Column="3" TopLine="36"/>
       </Position23>
       <Position24>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="217" Column="32" TopLine="211"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="150" Column="5" TopLine="122"/>
       </Position24>
       <Position25>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wcthread.pas"/>
-        <Caret Line="654" TopLine="631"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="49" Column="45" TopLine="16"/>
       </Position25>
       <Position26>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="369" Column="18" TopLine="346"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="50" Column="64" TopLine="16"/>
       </Position26>
       <Position27>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="229" Column="10" TopLine="202"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="69" Column="30" TopLine="62"/>
       </Position27>
       <Position28>
         <Filename Value="fmmainu.pas"/>
-        <Caret Line="82" Column="15" TopLine="60"/>
+        <Caret Line="317" Column="118" TopLine="289"/>
       </Position28>
       <Position29>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wthread.pas"/>
-        <Caret Line="413" Column="74" TopLine="390"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="162" TopLine="135"/>
       </Position29>
       <Position30>
-        <Filename Value="D:\Soft\Lazarus_1.8.2_x64\components my\wthread\wthread.pas"/>
-        <Caret Line="212" Column="20" TopLine="190"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="180" Column="30" TopLine="164"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
