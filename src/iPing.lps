@@ -3,8 +3,8 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="10"/>
-    <BuildModes Active="Release"/>
-    <Units Count="14">
+    <BuildModes Active="Releasex86"/>
+    <Units Count="15">
       <Unit0>
         <Filename Value="iPing.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -21,13 +21,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FmMainU"/>
-        <IsVisibleTab Value="True"/>
-        <WindowIndex Value="1"/>
-        <CursorPos X="38" Y="16"/>
+        <CursorPos X="6" Y="131"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <TopLine Value="89"/>
-          <CursorPos X="6" Y="131"/>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
+          <CursorPos X="38" Y="16"/>
         </ExtraEditor1>
         <UsageCount Value="31"/>
         <Bookmarks Count="1">
@@ -48,9 +47,9 @@
         <Filename Value="wpingu.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="wPingU"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="28" Y="12"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="13"/>
+        <CursorPos X="39" Y="28"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -126,6 +125,15 @@
         <CursorPos X="73" Y="59"/>
         <UsageCount Value="10"/>
       </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus_1.8.4\components_my\synapse\synaser.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1765"/>
+        <CursorPos X="22" Y="1771"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit14>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
@@ -205,48 +213,48 @@
         <Caret Line="136" Column="38" TopLine="118"/>
       </Position19>
       <Position20>
-        <Filename Value="fmmainu.pas"/>
-        <Caret Line="110" TopLine="227"/>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="38" Column="25" TopLine="16"/>
       </Position20>
       <Position21>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="38" Column="25" TopLine="16"/>
+        <Caret Line="151" Column="17" TopLine="140"/>
       </Position21>
       <Position22>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="151" Column="17" TopLine="140"/>
+        <Caret Line="66" Column="3" TopLine="36"/>
       </Position22>
       <Position23>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="66" Column="3" TopLine="36"/>
+        <Caret Line="150" Column="5" TopLine="122"/>
       </Position23>
       <Position24>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="150" Column="5" TopLine="122"/>
+        <Caret Line="49" Column="45" TopLine="16"/>
       </Position24>
       <Position25>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="49" Column="45" TopLine="16"/>
+        <Caret Line="50" Column="64" TopLine="16"/>
       </Position25>
       <Position26>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="50" Column="64" TopLine="16"/>
+        <Caret Line="69" Column="30" TopLine="62"/>
       </Position26>
       <Position27>
-        <Filename Value="wpingu.pas"/>
-        <Caret Line="69" Column="30" TopLine="62"/>
-      </Position27>
-      <Position28>
         <Filename Value="fmmainu.pas"/>
         <Caret Line="317" Column="118" TopLine="289"/>
+      </Position27>
+      <Position28>
+        <Filename Value="wpingu.pas"/>
+        <Caret Line="162" TopLine="135"/>
       </Position28>
       <Position29>
         <Filename Value="wpingu.pas"/>
-        <Caret Line="162" TopLine="135"/>
+        <Caret Line="180" Column="30" TopLine="164"/>
       </Position29>
       <Position30>
-        <Filename Value="wpingu.pas"/>
-        <Caret Line="180" Column="30" TopLine="164"/>
+        <Filename Value="fmmainu.pas"/>
+        <Caret Line="131" Column="6"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
